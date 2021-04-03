@@ -12,7 +12,7 @@ int include_string(char *string_one, char *string_two)
 	return (include_string(string_one + 1, string_two + 1));
 }
 
-char *_strtock(char *token, char *delim)
+char *_strtok(char *token, char *delim)
 {
 	unsigned int i;
 	char finded_delim;
