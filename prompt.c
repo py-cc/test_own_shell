@@ -6,9 +6,11 @@
 char *prompt(void)
 {
 	char *buffer = NULL;
+	size_t lenthg = 0;
+
 
 	write(1, SIGN, 2);
-	getline(&buffer, &(0), stdin);
+	getline(&buffer, &lenthg, stdin);
 
 	return (buffer);
 }
