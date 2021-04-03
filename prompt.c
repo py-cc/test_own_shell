@@ -11,7 +11,7 @@ char *prompt(void)
 
 	write(1, SIGN, 2);
 	getline(&buffer, &lenthg, stdin);
-
+	write(1, buffer, lenthg);
 	return (buffer);
 }
 
