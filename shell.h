@@ -1,24 +1,23 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-#include <fcntl.h>
-#include <sys/types.h>
-#include <dirent.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <errno.h>
-#include <signal.h>
-#include <sys/stat.h>
-#include <string.h>
-#include <sys/wait.h>
-#include <sys/time.h>
-#include <sys/resource.h>
+#include "headers/libraries.h"
+
+/* utils */
+#include "headers/types.h"
+#include "headers/_strings.h"
+#include "headers/list.h"
+#include "headers/comparacion.h"
+
+
+/* features */
 #include "headers/prompt.h"
+#include "headers/parser.h"
+#include "headers/is_valid_command.h"
+#include "headers/executor.h"
+#include "headers/_strtok.h"
+#include "headers/_which.h"
 
 
 #endif /* SHELL_H */
-
-
-
 

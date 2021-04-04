@@ -1,17 +1,4 @@
 
-
-
-int include_string(char *string_one, char *string_two)
-{
-	if (!string_one && !string_two)
-		return (0);
-	if (!*string_one || !*string_two)
-		return (1);
-	if (*string_one != *string_two)
-		return (0);
-	return (include_string(string_one + 1, string_two + 1));
-}
-
 char *_strtok(char *token, char *delim)
 {
 	unsigned int i;
@@ -28,7 +15,7 @@ char *_strtok(char *token, char *delim)
 
 	for (i = 0; token[i]; i++)
 	{
-		for ( ; include_string(token + i, delim); i++)
+		for ( ; includes_string(token + i, delim); i++)
 			if (!finded_delim)
 				token[i] = '\0', finded_delim = !finded_delim;
 		if (finded_delim)
