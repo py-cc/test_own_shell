@@ -27,6 +27,7 @@ int index_of_string(char *string, char *substring, ...);
 /*   searchString. Defaults to 0 */
 int starts_with(char *string, char *search_string, ...);
 
+
 /* The characters to be searched for at the start of this string.[, position]*/
 /* position: The position in this string at which to begin searching for */
 /*   searchString. Defaults to 0 */
