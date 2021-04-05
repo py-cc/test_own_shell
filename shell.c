@@ -6,7 +6,7 @@
 int main(ARGS_UNUSED, char **env)
 {
 	char *current_line;
-	list_t *tokens;
+	token_t *tokens;
 
 	do {
 		/* (void) -> prompt() -> string */
