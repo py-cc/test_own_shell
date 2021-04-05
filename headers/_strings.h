@@ -1,6 +1,6 @@
 #ifndef STRINGS_H
-
 #define STRINGS_H
+
 /*
 * Length
 */
@@ -25,22 +25,22 @@ int index_of_string(char *string, char *substring, ...);
 /* The characters to be searched for at the start of this string.[, position]*/
 /* position: The position in this string at which to begin searching for */
 /*   searchString. Defaults to 0 */
-int starts_with(char *string, char *search_string, ...);
+bool starts_with(char *string, char *search_string, ...);
 
 /* The characters to be searched for at the start of this string.[, position]*/
 /* position: The position in this string at which to begin searching for */
 /*   searchString. Defaults to 0 */
-int ends_with(char *string, char *search_string, ...);
+bool ends_with(char *string, char *search_string, ...);
 
 /* The characters to be searched for at the start of this string.[, position]*/
 /* position: The position in this string at which to begin searching for */
 /*   searchString. Defaults to 0 */
-int inclides_string(char *string, char *search_string, ...);
+bool inclides_string(char *string, char *search_string, ...);
 
 /* The characters to be searched for at the start of this string.[, position]*/
 /* position: The position in this string at which to begin searching for */
 /*   searchString. Defaults to 0 */
-int equal_strings(char *string, char *search_string, ...)
+bool equal_strings(char *string, char *search_string, ...)
 
 /*
 * Pointers
@@ -54,12 +54,24 @@ char *pointer_of_string(char *string char *substring, ...);
 * New String
 */
 
-/*  */
+/* concatenates the string arguments to the calling string */
+/*  and returns a new string. */
 char *concat_string(char *string_one, char *string_two, ...);
 
-/*  */
-char *split_string(char *string_one, char *string_two, ...);
+/* divides a String into an ordered list of substrings, */
+/*   puts these substrings into an array */
+/* limit: limit on the number of substrings to be included in the array */
+char *split_string(char *string_one, char *separator, ...);
 
+/* extracts a section of a string and returns it as a new string, */
+/* without modifying the original string. */
+char *slice_string(char *begin_index, char *end_index, ...);
+
+
+char *copy_string(char *string);
+
+
+char *remove_characters(char *string, char *characteres_to_search);
 
 #endif /* STRINGS_H */
 
