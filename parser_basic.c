@@ -18,11 +18,11 @@ void **parser(char *string) {
 	i = 0;
 	while(current_token != NULL)
 	{
-		args[i] = strdup(token);
+		args[i] = strdup(current_token);
 		current_token = strtok(NULL, " ");
 		i++;
 	}
-	args[i] = token;
+	args[i] = current_token;
 	/* leer el PATH y traer las direcciones y concatenarlas con el comando que nos llegue*/
 	for (i = 0; environ[i]; i++)
 	{
