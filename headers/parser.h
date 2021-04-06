@@ -9,4 +9,4 @@ void **parser(char *string);
 
 
 
-#andif /* PARSER_T */
+#endif /* PARSER_T */
