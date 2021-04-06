@@ -6,12 +6,14 @@
 char *prompt(void)
 {
 	char *buffer = NULL;
-	size_t lenthg = 0;
+	size_t length = 0;
+	ssize_t length_characters = 0;
 
 
 	write(1, SIGN, 2);
-	getline(&buffer, &lenthg, stdin);
-	write(1, buffer, lenthg);
+	length_characters = getline(&buffer, &length, stdin);
+	buffer[length_characters - 1] = '\0';
+	write(1, buffer, length_characters);
 	return (buffer);
 }
 
