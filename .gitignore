@@ -4,6 +4,7 @@
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
+./hsh
 *~
 \#*\#
 /.emacs.desktop
