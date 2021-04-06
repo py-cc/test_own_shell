@@ -45,7 +45,7 @@ int length_string_until(char *string, char charcter)
 * @substring: string to search
 * @variadic: bollean if have variadics
 * Return: length
-*/
+*
 int index_of_string(
 	char *string,
 	const char *substring,
@@ -54,11 +54,11 @@ int index_of_string(
 	int from_index;
 	va_list argumets;
 
-	/* validate pointer NULL */
+	 validate pointer NULL 
 	if (!string || !substring)
 		return (0);
 
-	/* validate pointer NULL */
+	 validate pointer NULL 
 	va_start(argumets, variadic);
 	from_index = (variadic) ? va_arg(argumets, int) : 0;
 	string += from_index;
@@ -76,4 +76,4 @@ int index_of_string(
 		false
 	));
 }
-
+*/
