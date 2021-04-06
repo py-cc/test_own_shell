@@ -8,6 +8,7 @@ void **parser(char *string) {
 	char *current_token = NULL;
 	char **args;
 	pid_t pid;
+	extern char **environ;
 
 	current_token = strtok(string, " ");
 	args = malloc(sizeof(char *) 10);
@@ -21,6 +22,8 @@ void **parser(char *string) {
 		i++;
 	}
 	args[i] = token;
+	/* leer el PATH y traer las direcciones y concatenarlas con el comando que nos llegue*/
+	
 
 	/* chear el hijo */
 	pid = fork();
