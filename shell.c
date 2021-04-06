@@ -19,7 +19,7 @@ int main(ARGS_UNUSED, char **env)
 		/* (string) -> parser() -> tokens[] */
 		tokens = parser(current_line);
 
-		write(1, *tokens, length_string(tokens)):;
+		write(1, *tokens, length_string(*tokens));
 		/* (tokens[]) -> (evn) -> executor() -> "status" */
 	} while (1);
 	return (0);
