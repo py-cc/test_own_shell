@@ -12,6 +12,7 @@ void **parser(char *string) {
 	current_token = strtok(string, " ");
 	args = malloc(sizeof(char *) 10);
 
+	/* split del los comados */
 	i = 0;
 	while(current_token != NULL)
 	{
@@ -21,6 +22,7 @@ void **parser(char *string) {
 	}
 	args[i] = token;
 
+	/* chear el hijo */
 	pid = fork();
 
 	if (!pid)
