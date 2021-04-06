@@ -11,14 +11,15 @@
 int main(ARGS_UNUSED, char **env)
 {
 	char *current_line;
-	token_t *tokens;
+	void **tokens;
 
 	do {
 		/* (void) -> prompt() -> string */
 		current_line = prompt();
 		/* (string) -> parser() -> tokens[] */
 		tokens = parser(current_line);
-		write(1, tokens, length(tokens));
+
+		write(1, *tokens, length_string(tokens)):;
 		/* (tokens[]) -> (evn) -> executor() -> "status" */
 	} while (1);
 	return (0);

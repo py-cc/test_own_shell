@@ -13,13 +13,14 @@
 token_t *parser(char *string)
 {
 	int i, validations;
-	token_t *tokens[] = {NULL};
+	token_t *tokens[] = {NULL}; /* commands, flags, etc */
 	char *current_string;
 	char *current_token = NULL;
 
 
 	for (i = 0; ;i++)
 	{
+		/* extrae la cadena siguiente con delimitador*/
 		current_string = strtok(((i == 0) ? string : NULL), DELIMITADOR);
 		if (current_string == NULL)
 			break;
@@ -33,6 +34,7 @@ token_t *parser(char *string)
 		{
 			current_token->type = command;
 			current_token->literal = remove_characters(current_string, "\"'");
+			/*añade curren_token en la ultima posicion de array tokens seguido de un NULL*/
 			add_array(&tokens, current_token);
 		}
 		/* validacion pipe */
