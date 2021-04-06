@@ -5,7 +5,7 @@
 
 /* utils */
 #include "headers/types.h"
-#include "headers/_strings.h"
+#include "headers/strings.h"
 #include "headers/list.h"
 #include "headers/token.h"
 
