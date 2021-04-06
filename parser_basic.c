@@ -9,9 +9,10 @@ void **parser(char *string) {
 	char **args;
 	pid_t pid;
 	extern char **environ;
+	char *path_content = "hola como estas";
 
 	current_token = strtok(string, " ");
-	args = malloc(sizeof(char *) 10);
+	args = malloc(sizeof(char *) * 10);
 
 	/* split del los comados */
 	i = 0;
@@ -23,6 +24,19 @@ void **parser(char *string) {
 	}
 	args[i] = token;
 	/* leer el PATH y traer las direcciones y concatenarlas con el comando que nos llegue*/
+	for (i = 0; environ[i]; i++)
+	{
+		if (strtok(environ[i], "=") == "PATH")
+			while (path_content)
+			{
+				path_content = strtok(NULL, ":");
+				args[0] /* ls */
+				args[0] = strconcat("/", args[0]);
+				args[0] = strconcat(path_content, args[0]);
+					/* /usr/local/sbin/ls */
+				
+			}
+	}
 	
 
 	/* chear el hijo */
