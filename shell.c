@@ -12,6 +12,7 @@ int main(ARGS_UNUSED, char **env)
 {
 	char *current_line;
 	void **tokens;
+	(void)env;
 
 	do {
 		/* (void) -> prompt() -> string */
