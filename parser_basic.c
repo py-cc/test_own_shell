@@ -8,7 +8,7 @@ void **parser(char *string) {
 	char *current_token = NULL;
 	char **args;
 	pid_t pid;
-
+	/* prueba */
 
 	current_token = strtok(string, " ");
 	args = malloc(sizeof(char *) 10);
