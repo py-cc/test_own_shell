@@ -36,7 +36,7 @@ int length_string_until(char *string, char charcter)
 		return (0);
 
 	/* add weight of a character than 1 */
-	return (i + length_string_until);
+	return (1 + length_string_until);
 }
 
 /**
