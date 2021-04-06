@@ -9,7 +9,7 @@ void **parser(char *string) {
 	char **args;
 	pid_t pid;
 	/* prueba */
-
+	/* prueba */
 	current_token = strtok(string, " ");
 	args = malloc(sizeof(char *) 10);
 
