@@ -1,18 +1,21 @@
 #include "shell.h"
 
 /**
-* length_string - get lenth to strings
+* length_string - get length to strings
 * @string: string to get length
 * Return: length
 */
 int length_string(char *string)
 {
+	/* string == NULL return length 0 */
 	if (!string)
 		return (0);
 
+	/* *string == '\0' return length 0 */
 	if (!*string)
 		return (0);
 
+	/* add weight of a character than 1 */
 	return (1 + length_string(string + 1));
 }
 
@@ -24,12 +27,15 @@ int length_string(char *string)
 */
 int length_string_until(char *string, char charcter)
 {
+	/* string == NULL return length 0 */
 	if (!string)
 		return (0);
 
+	/* *string == '\0' return length 0 */
 	if (*string == charcter)
 		return (0);
 
+	/* add weight of a character than 1 */
 	return (i + length_string_until);
 }
 
@@ -37,7 +43,7 @@ int length_string_until(char *string, char charcter)
 * index_of_string - get lenth to strings
 * @string: string to get length
 * @substring: string to search
-* @variadic: bollean variadic
+* @variadic: bollean if have variadics
 * Return: length
 */
 int index_of_string(
@@ -48,9 +54,11 @@ int index_of_string(
 	int from_index;
 	va_list argumets;
 
+	/* validate pointer NULL */
 	if (!string || !substring)
 		return (0);
 
+	/* validate pointer NULL */
 	va_start(argumets, variadic);
 	from_index = (variadic) ? va_arg(argumets, int) : 0;
 	string += from_index;
