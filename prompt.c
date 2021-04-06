@@ -7,12 +7,13 @@ char *prompt(void)
 {
 	char *buffer = NULL;
 	ssize_t bytes_read = 0;
-	size_t lenthg = 0;
+	ssize_t length_characters = 0;
 
 	write(1, SIGN, 2);
-	bytes_read = getline(&buffer, &lenthg, stdin);
-	buffer[bytes_read - 1] = '\0';
-
+	length_characters = getline(&buffer, &length, stdin);
+	/*delete '\n' in last character */
+	buffer[length_characters - 1] = '\0';
+	write(1, buffer, length_characters);
 	return (buffer);
 }
 
