@@ -2,6 +2,19 @@
 
 #define DELIMITADOR (" ")
 
+bool equal_strings(char *string, char *other_string)
+{
+	if (!string || !other_string)
+		return (false);
+	if (!*string && !*other_string)
+		return (true);
+
+	if (*string != *other_string)
+		return (false);
+
+	return (equal_strings(string + 1, other_string + 1));
+}
+
 void **parser(char *string) {
 	int i, status;
 	char *current_string;
@@ -23,6 +36,7 @@ void **parser(char *string) {
 		i++;
 	}
 	args[i] = current_token;
+
 	/* leer el PATH y traer las direcciones y concatenarlas con el comando que nos llegue*/
 	for (i = 0; environ[i]; i++)
 	{
@@ -34,7 +48,6 @@ void **parser(char *string) {
 				args[0] = strconcat("/", args[0]);
 				args[0] = strconcat(path_content, args[0]);
 					/* /usr/local/sbin/ls */
-				
 			}
 	}
 	
